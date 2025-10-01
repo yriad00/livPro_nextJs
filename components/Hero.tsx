@@ -17,7 +17,7 @@ export default function Hero() {
       </div>
       
       {/* Dark Blue Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-secondary/85 via-secondary/80 to-secondary/85"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-secondary/50 via-secondary/60 to-secondary/85"></div>
       
       {/* Pattern Overlay */}
       <div className="absolute inset-0 opacity-10">

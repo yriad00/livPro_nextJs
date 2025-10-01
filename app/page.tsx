@@ -26,7 +26,6 @@ export default function Home() {
         <Features />
         <HowItWorks />
         <CTABanner />
-        <Benefits />
         <About />
         <Testimonials />
         <FAQ />
