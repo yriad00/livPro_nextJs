@@ -1,0 +1,39 @@
+import Loader from '@/components/Loader'
+import TopBar from '@/components/TopBar'
+import Navbar from '@/components/Navbar'
+import Hero from '@/components/Hero'
+import Stats from '@/components/Stats'
+import Features from '@/components/Features'
+import HowItWorks from '@/components/HowItWorks'
+import CTABanner from '@/components/CTABanner'
+import Benefits from '@/components/Benefits'
+import About from '@/components/About'
+import Testimonials from '@/components/Testimonials'
+import FAQ from '@/components/FAQ'
+import Contact from '@/components/Contact'
+import CTA from '@/components/CTA'
+import Footer from '@/components/Footer'
+
+export default function Home() {
+  return (
+    <>
+      <Loader />
+      <TopBar />
+      <main className="min-h-screen">
+        <Navbar />
+        <Hero />
+        <Stats />
+        <Features />
+        <HowItWorks />
+        <CTABanner />
+        <Benefits />
+        <About />
+        <Testimonials />
+        <FAQ />
+        <Contact />
+        <CTA />
+        <Footer />
+      </main>
+    </>
+  )
+}
