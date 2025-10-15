@@ -7,7 +7,7 @@ export default function Stats() {
   const totalOrders = '00192564'
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-primary to-orange-600 relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-primary to-primary/90 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>

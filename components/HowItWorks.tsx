@@ -125,7 +125,7 @@ export default function HowItWorks() {
                 <motion.div 
                   whileHover={{ scale: 1.1, rotate: 360 }}
                   transition={{ type: "spring", stiffness: 200 }}
-                  className="relative z-10 w-24 h-24 bg-gradient-to-br from-primary via-orange-500 to-primary/80 rounded-full flex items-center justify-center text-white text-3xl font-bold shadow-xl mb-6"
+                  className="relative z-10 w-24 h-24 bg-gradient-to-br from-primary via-primary/90 to-primary/80 rounded-full flex items-center justify-center text-white text-3xl font-bold shadow-xl mb-6"
                 >
                   <motion.span
                     animate={{ 

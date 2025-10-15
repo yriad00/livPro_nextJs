@@ -112,14 +112,14 @@ export default function About() {
                   className="group relative"
                 >
                   {/* Card glow effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-orange-500/10 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
                   <div className="relative bg-white border-2 border-gray-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-md hover:shadow-xl transition-all duration-500 hover:border-primary/30">
                     {/* Icon */}
                     <motion.div
                       whileHover={{ rotate: 360, scale: 1.1 }}
                       transition={{ duration: 0.6 }}
-                      className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-primary to-orange-500 rounded-lg sm:rounded-xl flex items-center justify-center text-white mb-3 sm:mb-4 shadow-lg group-hover:shadow-xl transition-shadow"
+                      className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-primary to-primary/80 rounded-lg sm:rounded-xl flex items-center justify-center text-white mb-3 sm:mb-4 shadow-lg group-hover:shadow-xl transition-shadow"
                     >
                       {card.icon}
                     </motion.div>
@@ -138,7 +138,7 @@ export default function About() {
                       whileInView={{ width: "40px" }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.15 + 0.3, duration: 0.6 }}
-                      className="h-0.5 sm:h-1 bg-gradient-to-r from-primary to-orange-500 rounded-full mt-3 sm:mt-4 group-hover:w-full transition-all duration-500"
+                      className="h-0.5 sm:h-1 bg-gradient-to-r from-primary to-primary/80 rounded-full mt-3 sm:mt-4 group-hover:w-full transition-all duration-500"
                     ></motion.div>
                   </div>
                 </motion.div>
@@ -200,7 +200,7 @@ export default function About() {
                         <motion.div 
                           whileHover={{ rotate: 360, scale: 1.15 }}
                           transition={{ type: "spring", stiffness: 200 }}
-                          className="w-12 h-12 bg-gradient-to-br from-primary to-orange-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-2xl group-hover/value:shadow-primary/50 transition-shadow"
+                          className="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center flex-shrink-0 shadow-2xl group-hover/value:shadow-primary/50 transition-shadow"
                         >
                           <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -228,7 +228,7 @@ export default function About() {
                 rotate: [0, 5, 0]
               }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-primary to-orange-500 rounded-2xl shadow-2xl opacity-80 blur-sm"
+              className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-primary to-primary/80 rounded-2xl shadow-2xl opacity-80 blur-sm"
             ></motion.div>
           </motion.div>
 
@@ -260,7 +260,7 @@ export default function About() {
                   className="bg-white border-2 border-gray-100 rounded-xl p-4 shadow-md hover:shadow-lg hover:border-primary/30 transition-all"
                 >
                   <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-primary to-orange-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
                       <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>

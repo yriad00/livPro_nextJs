@@ -53,7 +53,7 @@ export default function Testimonials() {
             rotate: [0, -90, 0]
           }}
           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-0 left-1/4 w-80 h-80 bg-orange-500 rounded-full blur-3xl"
+          className="absolute bottom-0 left-1/4 w-80 h-80 bg-primary rounded-full blur-3xl"
         ></motion.div>
       </div>
       
@@ -99,14 +99,14 @@ export default function Testimonials() {
               style={{ transformStyle: "preserve-3d" }}
             >
               {/* Card glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-orange-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 scale-95 group-hover:scale-100"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/30 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 scale-95 group-hover:scale-100"></div>
               
               <div className="relative bg-white/10 backdrop-blur-md rounded-3xl p-8 border-2 border-white/20 hover:border-primary/50 transition-all duration-500 shadow-2xl">
                 {/* Quote icon */}
                 <motion.div
                   animate={{ rotate: [0, 5, -5, 0] }}
                   transition={{ duration: 3, repeat: Infinity }}
-                  className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-primary to-orange-500 rounded-full flex items-center justify-center shadow-xl"
+                  className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center shadow-xl"
                 >
                   <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
@@ -141,7 +141,7 @@ export default function Testimonials() {
                 <div className="flex items-center gap-4">
                   <motion.div 
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="w-14 h-14 bg-gradient-to-br from-primary to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-xl"
+                    className="w-14 h-14 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-xl"
                   >
                     {testimonial.avatar}
                   </motion.div>
