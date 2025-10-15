@@ -1,7 +1,8 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import { useState } from 'react'
 
 const features = [
   {
@@ -37,82 +38,104 @@ const features = [
   },
 ]
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-}
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-}
-
 export default function Features() {
+  const [activeIndex, setActiveIndex] = useState(0)
+
   return (
-    <section id="services" className="py-20 bg-neutral-light">
+    <section id="services" className="py-32 bg-neutral-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-secondary mb-4">
-            Nos Services
+          <p className="text-primary font-bold text-xl mb-3">Nos Services</p>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary mb-6">
+            Solutions de livraison adaptées
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Une solution complète pour vos envois entre le Maroc et l'Allemagne
           </p>
         </motion.div>
 
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-8"
-        >
+        {/* Animated Cards Container */}
+        <div className="flex flex-col md:flex-row items-stretch justify-center gap-6 mb-16 md:h-[240px]">
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              variants={item}
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-100"
+              onMouseEnter={() => setActiveIndex(index)}
+              layout
+              className={`cursor-pointer transition-all duration-500 ${
+                activeIndex === index
+                  ? 'md:w-[600px] w-full'
+                  : 'md:w-[200px] w-full'
+              }`}
             >
-              <div className="relative w-full h-48">
-                <Image
-                  src={feature.image}
-                  alt={feature.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-secondary mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
+              <motion.div
+                layout
+                className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden border-2 h-full ${
+                  activeIndex === index
+                    ? 'border-primary'
+                    : 'border-gray-100 hover:border-primary/30'
+                }`}
+              >
+                <AnimatePresence mode="wait">
+                  {activeIndex === index ? (
+                    // Expanded Card
+                    <motion.div
+                      key="expanded"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="p-8 h-full flex items-center"
+                    >
+                      <div className="flex items-start gap-6">
+                        <div className="flex-shrink-0 w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+                          {feature.icon}
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-2xl font-bold text-secondary mb-3">
+                            {feature.title}
+                          </h3>
+                          <p className="text-gray-600 leading-relaxed">
+                            {feature.description}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ) : (
+                    // Collapsed Card
+                    <motion.div
+                      key="collapsed"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="p-6 flex flex-col items-center justify-center text-center h-full"
+                    >
+                      <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-3">
+                        {feature.icon}
+                      </div>
+                      <h4 className="text-sm font-semibold text-secondary">
+                        {feature.title}
+                      </h4>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-12"
+          className="text-center"
         >
           <a
             href="/send"

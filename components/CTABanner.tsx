@@ -1,20 +1,24 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 
 export default function CTABanner() {
   return (
     <section className="relative py-32 overflow-hidden">
-      {/* Background Image */}
+      {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/tra.jpeg"
-          alt="Transport background"
-          fill
-          className="object-cover"
-          priority
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source
+            src="https://cdn.prod.website-files.com/651c198b3ea329eb422858f1/6535d1dc92a04a804f144cef_video4_v210001-0200-transcode.webm"
+            type="video/webm"
+          />
+        </video>
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
