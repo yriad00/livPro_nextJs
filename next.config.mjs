@@ -15,19 +15,6 @@ const nextConfig = {
   
   // Optimize production builds
   swcMinify: true,
-  
-  // Reduce JavaScript bundle size
-  modularizeImports: {
-    'framer-motion': {
-      transform: 'framer-motion/dist/es/{{member}}',
-    },
-  },
-  
-  // Experimental features for better performance
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['framer-motion', 'lucide-react'],
-  },
 }
 
 export default nextConfig
