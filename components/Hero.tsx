@@ -115,7 +115,7 @@ export default function Hero() {
                 className="relative z-10 w-full"
               >
                 <img 
-                  src="/images/delivery-man.png" 
+                  src="/images/Gemini_Generated_Image-removebg-preview.png" 
                   alt="Livreur professionnel LivPro avec colis"
                   className="w-full h-auto max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl drop-shadow-2xl object-contain"
                   width={700}
