@@ -77,7 +77,7 @@ export default function Testimonials() {
             Ils nous font confiance
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Découvrez les retours d'expérience de nos clients
+            Découvrez les retours d&apos;expérience de nos clients
           </p>
         </motion.div>
 
@@ -134,7 +134,7 @@ export default function Testimonials() {
 
                 {/* Quote */}
                 <p className="text-gray-100 mb-8 leading-relaxed italic text-lg relative z-10">
-                  "{testimonial.text}"
+                  &ldquo;{testimonial.text}&rdquo;
                 </p>
 
                 {/* Author with avatar animation */}

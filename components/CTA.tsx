@@ -17,7 +17,7 @@ export default function CTA() {
             Prêt à envoyer votre colis ?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Commencez dès maintenant et profitez d'un service simple, rapide et sécurisé
+            Commencez dès maintenant et profitez d&apos;un service simple, rapide et sécurisé
           </p>
           <Link
             href="/send"

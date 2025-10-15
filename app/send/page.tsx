@@ -142,7 +142,7 @@ export default function SendPage() {
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
-                <span className="hidden sm:inline">Retour à l'accueil</span>
+                <span className="hidden sm:inline">Retour à l&apos;accueil</span>
                 <span className="sm:hidden">Accueil</span>
               </Link>
             </motion.div>
@@ -245,7 +245,7 @@ export default function SendPage() {
             >
               {currentStep === 1 && (
                 <div>
-                  <h1 className="text-3xl font-bold text-secondary mb-6">👤 Informations de l'expéditeur</h1>
+                  <h1 className="text-3xl font-bold text-secondary mb-6">👤 Informations de l&apos;expéditeur</h1>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Nom complet *</label>
@@ -483,7 +483,7 @@ export default function SendPage() {
                     onClick={handleSubmit}
                     className="w-full sm:w-auto px-8 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold transition-all"
                   >
-                    Confirmer l'envoi ✓
+                    Confirmer l&apos;envoi ✓
                   </button>
                 )}
               </div>

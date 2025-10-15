@@ -42,7 +42,7 @@ export default function About() {
             À propos de LivPro
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
-            Votre partenaire de confiance pour l'envoi de colis entre le Maroc et l'Allemagne
+            Votre partenaire de confiance pour l&apos;envoi de colis entre le Maroc et l&apos;Allemagne
           </p>
         </motion.div>
 

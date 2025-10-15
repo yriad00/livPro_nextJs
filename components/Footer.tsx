@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="col-span-1">
             <h3 className="text-2xl font-bold text-white mb-4">LivPro</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Votre partenaire de confiance pour vos envois entre Casablanca et l'Allemagne.
+              Votre partenaire de confiance pour vos envois entre Casablanca et l&apos;Allemagne.
             </p>
           </div>
 
