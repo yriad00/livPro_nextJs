@@ -7,10 +7,11 @@ export default function Loader() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Hide loader after 2 seconds
+    // Hide loader faster on mobile (800ms) or 1.5s on desktop
+    const isMobile = window.innerWidth < 768
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 2000)
+    }, isMobile ? 800 : 1500)
 
     return () => clearTimeout(timer)
   }, [])

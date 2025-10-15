@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
 export default function Hero() {
+  const isMobile = useIsMobile()
+
   return (
     <section className="relative overflow-hidden text-white pt-8">
       {/* Background Image with Blur */}
@@ -13,7 +16,8 @@ export default function Hero() {
           alt="Background transport"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 backdrop-blur-sm"></div>
+        {/* Disable backdrop-blur on mobile for better performance */}
+        <div className="absolute inset-0 md:backdrop-blur-sm"></div>
       </div>
       
       {/* Dark Blue Overlay */}
@@ -100,9 +104,9 @@ export default function Hero() {
               
               {/* Delivery Man Image */}
               <motion.div
-                animate={{ 
+                animate={!isMobile ? { 
                   y: [0, -15, 0],
-                }}
+                } : {}}
                 transition={{ 
                   duration: 3,
                   repeat: Infinity,
@@ -119,18 +123,18 @@ export default function Hero() {
                 />
               </motion.div>
               
-              {/* Floating elements */}
+              {/* Floating elements - hidden on mobile for better performance */}
               <motion.div
-                animate={{ 
+                animate={!isMobile ? { 
                   y: [0, -20, 0],
                   rotate: [0, 5, 0]
-                }}
+                } : {}}
                 transition={{ 
                   duration: 4,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                className="absolute top-10 right-10 bg-white p-4 rounded-2xl shadow-xl"
+                className="hidden md:block absolute top-10 right-10 bg-white p-4 rounded-2xl shadow-xl"
               >
                 <svg className="w-12 h-12 text-primary" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
@@ -139,17 +143,17 @@ export default function Hero() {
               </motion.div>
               
               <motion.div
-                animate={{ 
+                animate={!isMobile ? { 
                   y: [0, 20, 0],
                   rotate: [0, -5, 0]
-                }}
+                } : {}}
                 transition={{ 
                   duration: 5,
                   repeat: Infinity,
                   ease: "easeInOut",
                   delay: 1
                 }}
-                className="absolute bottom-20 left-10 bg-white p-4 rounded-2xl shadow-xl"
+                className="hidden md:block absolute bottom-20 left-10 bg-white p-4 rounded-2xl shadow-xl"
               >
                 <svg className="w-12 h-12 text-secondary" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />

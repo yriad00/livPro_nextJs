@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
 const testimonials = [
   {
@@ -35,27 +36,31 @@ const cardVariants = {
 }
 
 export default function Testimonials() {
+  const isMobile = useIsMobile()
+
   return (
     <section className="py-20 bg-gradient-to-br from-secondary via-secondary to-secondary/90 text-white relative overflow-hidden">
-      {/* Animated background patterns */}
-      <div className="absolute inset-0 opacity-10">
-        <motion.div
-          animate={{ 
-            scale: [1, 1.2, 1],
-            rotate: [0, 90, 0]
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-0 right-1/4 w-96 h-96 bg-primary rounded-full blur-3xl"
-        ></motion.div>
-        <motion.div
-          animate={{ 
-            scale: [1.2, 1, 1.2],
-            rotate: [0, -90, 0]
-          }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-0 left-1/4 w-80 h-80 bg-primary rounded-full blur-3xl"
-        ></motion.div>
-      </div>
+      {/* Animated background patterns - disabled on mobile for better performance */}
+      {!isMobile && (
+        <div className="absolute inset-0 opacity-10">
+          <motion.div
+            animate={{ 
+              scale: [1, 1.2, 1],
+              rotate: [0, 90, 0]
+            }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="absolute top-0 right-1/4 w-96 h-96 bg-primary rounded-full blur-3xl"
+          ></motion.div>
+          <motion.div
+            animate={{ 
+              scale: [1.2, 1, 1.2],
+              rotate: [0, -90, 0]
+            }}
+            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            className="absolute bottom-0 left-1/4 w-80 h-80 bg-primary rounded-full blur-3xl"
+          ></motion.div>
+        </div>
+      )}
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
