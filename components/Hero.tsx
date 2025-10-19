@@ -116,7 +116,7 @@ export default function Hero() {
               >
                 <img 
                   src="/images/Gemini_Generated_Image-removebg-preview.png" 
-                  alt="Livreur professionnel LivPro avec colis"
+                  alt="Livreur professionnel RM TAWSSIL avec colis"
                   className="w-full h-auto max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl drop-shadow-2xl object-contain"
                   width={700}
                   height={900}

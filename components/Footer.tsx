@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -9,9 +10,15 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="col-span-1">
-            <h3 className="text-2xl font-bold text-white mb-4">LivPro</h3>
+            <Image 
+              src="/images/logo-WHITE.png" 
+              alt="RM TAWSSIL Logo" 
+              width={240} 
+              height={80}
+              className="h-16 sm:h-20 w-auto mb-4"
+            />
             <p className="text-gray-300 text-sm leading-relaxed">
-              Votre partenaire de confiance pour vos envois entre Casablanca et l&apos;Allemagne.
+              Votre partenaire de confiance pour vos envois entre le Maroc et l&apos;Allemagne.
             </p>
           </div>
 

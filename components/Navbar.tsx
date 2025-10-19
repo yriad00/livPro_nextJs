@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import Logo from './Logo'
+import Image from 'next/image'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -10,13 +10,17 @@ export default function Navbar() {
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo and Brand */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <Logo className="w-12 h-12 transform group-hover:scale-110 transition-transform duration-200" />
-            <span className="text-2xl font-bold text-secondary font-heading">
-              LivPro
-            </span>
+        <div className="flex justify-between items-center h-24 sm:h-28">
+          {/* Logo */}
+          <Link href="/" className="flex items-center group">
+            <Image 
+              src="/images/logo-ff.png" 
+              alt="RM TAWSSIL Logo" 
+              width={280} 
+              height={100}
+              className="h-20 sm:h-24 w-auto transform group-hover:scale-105 transition-transform duration-200"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}

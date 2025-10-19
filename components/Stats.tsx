@@ -28,7 +28,7 @@ export default function Stats() {
               Rejoignez la
               <br className="hidden sm:block" />
               <span className="sm:hidden"> </span>
-              Famille LivPro!
+              Famille RM TAWSSIL!
             </h2>
           </motion.div>
 

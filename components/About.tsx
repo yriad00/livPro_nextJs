@@ -39,7 +39,7 @@ export default function About() {
             Qui sommes-nous
           </motion.span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-3 sm:mb-4 px-4">
-            À propos de LivPro
+            À propos de RM TAWSSIL
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
             Votre partenaire de confiance pour l&apos;envoi de colis entre le Maroc et l&apos;Allemagne
@@ -73,7 +73,7 @@ export default function About() {
                     </svg>
                   ),
                   title: "Connexion internationale",
-                  description: "LivPro est né de la volonté de faciliter les envois de colis entre le Maroc et l'Allemagne. Nous comprenons l'importance de rester connecté avec vos proches et de recevoir vos colis en toute sécurité."
+                  description: "RM TAWSSIL est né de la volonté de faciliter les envois de colis entre le Maroc et l'Allemagne. Nous comprenons l'importance de rester connecté avec vos proches et de recevoir vos colis en toute sécurité."
                 },
                 {
                   icon: (
@@ -164,7 +164,7 @@ export default function About() {
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.6 }}
                 src="/images/Cardboard.jpeg" 
-                alt="Colis LivPro"
+                alt="Colis RM TAWSSIL"
                 className="w-full h-full object-cover"
               />
               

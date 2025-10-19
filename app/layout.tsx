@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
-const BRAND_NAME = 'LivPro'
+const BRAND_NAME = 'RM TAWSSIL'
 
 export const metadata: Metadata = {
   title: `${BRAND_NAME} — Envois Maroc ↔ Allemagne | Rapide & Sûr`,

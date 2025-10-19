@@ -142,7 +142,7 @@ export default function Contact() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Localisation LivPro Casablanca"
+                title="Localisation RM TAWSSIL Casablanca"
               />
             </div>
           </motion.div>

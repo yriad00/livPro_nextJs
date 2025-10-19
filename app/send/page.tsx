@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Swal from 'sweetalert2'
 import { useRouter } from 'next/navigation'
@@ -118,17 +119,17 @@ export default function SendPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-neutral-light to-white">
       <div className="bg-white shadow-sm border-b sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3">
           <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-3 group">
-              <motion.div 
-                whileHover={{ scale: 1.1, rotate: 360 }}
-                transition={{ duration: 0.5 }}
-                className="w-10 h-10 bg-primary rounded-full flex items-center justify-center"
-              >
-                <span className="text-white font-bold text-lg">L</span>
-              </motion.div>
-              <span className="text-2xl font-bold text-secondary group-hover:text-primary transition-colors">LivPro</span>
+            <Link href="/" className="flex items-center group">
+              <Image 
+                src="/images/logo-ff.png" 
+                alt="RM TAWSSIL Logo" 
+                width={280} 
+                height={100}
+                className="h-20 sm:h-24 w-auto transform group-hover:scale-105 transition-transform duration-200"
+                priority
+              />
             </Link>
             
             <motion.div
