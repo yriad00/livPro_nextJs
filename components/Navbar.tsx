@@ -18,6 +18,7 @@ export default function Navbar() {
               alt="RM TAWSSIL Logo" 
               width={280} 
               height={100}
+              style={{ scale: 1.8 , margin: '0px 0px 0px 15px'}}
               className="h-20 sm:h-24 w-auto transform group-hover:scale-105 transition-transform duration-200"
               priority
             />

@@ -28,8 +28,7 @@ export default function TopBar() {
               <span className="font-semibold text-base">💳 Paiement sur place</span>
             </div>
 
-            {/* Separator */}
-            <span className="text-white/60 text-xl">•</span>
+          
 
             {/* Suivi en temps réel */}
             <div className="flex items-center gap-3">
@@ -39,8 +38,7 @@ export default function TopBar() {
               <span className="font-semibold text-base">📍 Suivi en temps réel</span>
             </div>
 
-            {/* Separator */}
-            <span className="text-white/60 text-xl">•</span>
+            
 
             {/* Support multilingue */}
             <div className="flex items-center gap-3">
@@ -50,8 +48,7 @@ export default function TopBar() {
               <span className="font-semibold text-base">🌍 Support FR/DE/AR</span>
             </div>
 
-            {/* Separator */}
-            <span className="text-white/60 text-xl">•</span>
+            
           </div>
         ))}
       </motion.div>

@@ -15,6 +15,7 @@ export default function Footer() {
               alt="RM TAWSSIL Logo" 
               width={240} 
               height={80}
+              style={{ scale: 1.8 , margin: 'auto'}}
               className="h-16 sm:h-20 w-auto mb-4"
             />
             <p className="text-gray-300 text-sm leading-relaxed">
