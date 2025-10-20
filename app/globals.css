@@ -46,16 +46,3 @@ html {
 }
 
 /* Optimize rendering on mobile */
-@media (max-width: 768px) {
-  * {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-  }
-  
-  /* Disable expensive effects on mobile */
-  .backdrop-blur-sm,
-  .backdrop-blur-md,
-  .backdrop-blur-lg {
-    backdrop-filter: none !important;
-  }
-}

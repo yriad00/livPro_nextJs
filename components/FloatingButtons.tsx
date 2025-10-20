@@ -35,7 +35,7 @@ export default function FloatingButtons() {
       {/* Bouton WhatsApp - Fixe à gauche */}
       <motion.button
         onClick={openWhatsApp}
-        className="fixed left-4 sm:left-6 bottom-20 sm:bottom-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 sm:p-4 shadow-2xl hover:shadow-xl transition-all duration-300 group"
+        className="fixed left-4 sm:left-6 bottom-5 sm:bottom-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 sm:p-4 shadow-2xl hover:shadow-xl transition-all duration-300 group"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         initial={{ opacity: 0, x: -100 }}
@@ -61,7 +61,7 @@ export default function FloatingButtons() {
         {showScrollTop && (
           <motion.button
             onClick={scrollToTop}
-            className="fixed right-4 sm:right-6 bottom-20 sm:bottom-6 z-50 bg-primary hover:bg-primary/90 text-white rounded-full p-4 sm:p-4 shadow-2xl hover:shadow-xl transition-all duration-300 group"
+            className="fixed right-4 sm:right-6 bottom-5 sm:bottom-6 z-50 bg-primary hover:bg-primary/90 text-white rounded-full p-4 sm:p-4 shadow-2xl hover:shadow-xl transition-all duration-300 group"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             initial={{ opacity: 0, y: 100 }}

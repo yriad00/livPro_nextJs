@@ -42,30 +42,4 @@ video {
 }
 
 /* Mobile-specific fixes for floating buttons */
-@media (max-width: 768px) {
-  .floating-button-whatsapp,
-  .floating-button-scroll {
-    position: fixed !important;
-    z-index: 9999 !important;
-  }
-  
-  /* Ensure navbar doesn't overflow */
-  nav {
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-  }
-  
-  /* Ensure footer doesn't overflow */
-  footer {
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-  }
-  
-  /* Better spacing on mobile */
-  .max-w-7xl,
-  .max-w-6xl,
-  .max-w-5xl {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-}
+

@@ -21,16 +21,4 @@
 }
 
 /* Desktop */
-@media (min-width: 769px) {
-  .floating-button-whatsapp {
-    position: fixed !important;
-    left: 1.5rem !important;
-    bottom: 1.5rem !important;
-  }
-  
-  .floating-button-scroll {
-    position: fixed !important;
-    right: 1.5rem !important;
-    bottom: 1.5rem !important;
-  }
-}
+
