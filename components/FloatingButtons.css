@@ -1,0 +1,36 @@
+/* Styles pour s'assurer que les boutons restent fixes sur mobile */
+.floating-button-whatsapp,
+.floating-button-scroll {
+  position: fixed !important;
+  z-index: 9999 !important;
+}
+
+/* Empêcher les boutons de descendre dans le footer */
+@media (max-width: 768px) {
+  .floating-button-whatsapp {
+    position: fixed !important;
+    left: 1rem !important;
+    bottom: 5rem !important;
+  }
+  
+  .floating-button-scroll {
+    position: fixed !important;
+    right: 1rem !important;
+    bottom: 5rem !important;
+  }
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .floating-button-whatsapp {
+    position: fixed !important;
+    left: 1.5rem !important;
+    bottom: 1.5rem !important;
+  }
+  
+  .floating-button-scroll {
+    position: fixed !important;
+    right: 1.5rem !important;
+    bottom: 1.5rem !important;
+  }
+}

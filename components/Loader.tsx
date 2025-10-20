@@ -16,10 +16,11 @@ export default function Loader() {
     return () => clearTimeout(timer)
   }, [])
 
+  // Ne rien afficher après le chargement
   if (!isLoading) return null
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-white">
+    <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white">
       <div className="loader">
         <div className="truckWrapper">
           <div className="truckBody">
@@ -149,6 +150,7 @@ h78.747C231.693,100.736,232.77,106.162,232.77,111.694z"
           </svg>
         </div>
       </div>
+     
     </div>
   )
 }

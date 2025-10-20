@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Swal from 'sweetalert2'
 import { useRouter } from 'next/navigation'
+import FloatingButtons from '@/components/FloatingButtons'
 
 interface FormData {
   senderName: string
@@ -493,6 +494,7 @@ export default function SendPage() {
           </div>
         </div>
       </div>
+      <FloatingButtons />
     </div>
   )
 }
