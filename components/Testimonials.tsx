@@ -13,7 +13,7 @@ const testimonials = [
   },
   {
     name: 'Mohammed El Amrani',
-    location: 'Berlin',
+    location: 'Frankfurt',
     text: 'Enfin une solution simple et transparente pour recevoir mes colis du Maroc. Les tarifs sont clairs et le service client très réactif. Je recommande vivement !',
     rating: 5,
     avatar: 'ME',
