@@ -16,10 +16,10 @@ import FloatingButtons from '@/components/FloatingButtons'
 
 export default function Home() {
   return (
-    <>
+    <div className="overflow-x-hidden w-full">
       <Loader />
       <TopBar />
-      <main className="min-h-screen">
+      <main className="min-h-screen overflow-x-hidden">
         <Navbar />
         <Hero />
         <Stats />
@@ -34,6 +34,6 @@ export default function Home() {
         <Footer />
       </main>
       <FloatingButtons />
-    </>
+    </div>
   )
 }

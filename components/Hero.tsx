@@ -8,11 +8,11 @@ export default function Hero() {
   const isMobile = useIsMobile()
 
   return (
-    <section className="relative overflow-hidden text-white pt-8">
+    <section className="relative overflow-x-hidden overflow-y-visible text-white pt-8">
       {/* Background Image with Blur */}
       <div className="absolute inset-0">
         <img 
-          src="/images/background_transport.jpeg" 
+          src="/images/rm_tawssil3.jpg" 
           alt="Background transport"
           className="w-full h-full object-cover"
         />
@@ -31,7 +31,7 @@ export default function Hero() {
         }}></div>
       </div>
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-28">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-28 overflow-x-hidden">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div
@@ -90,12 +90,12 @@ export default function Hero() {
           
           {/* Right Image - Delivery Man */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: isMobile ? 0 : 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative mt-8 lg:mt-0"
+            className="relative mt-8 lg:mt-0 overflow-hidden"
           >
-            <div className="relative w-full h-[350px] sm:h-[450px] lg:h-[500px] flex items-center justify-center">
+            <div className="relative w-full h-[350px] sm:h-[450px] lg:h-[500px] flex items-center justify-center overflow-hidden">
               {/* Decorative circles */}
               <div className="absolute inset-0 -z-10">
                 <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
@@ -115,7 +115,7 @@ export default function Hero() {
                 className="relative z-10 w-full"
               >
                 <img 
-                  src="/images/Gemini_Generated_Image-removebg-preview.png" 
+                  src="/images/delevery-removebg-preview.png" 
                   alt="Livreur professionnel RM TAWSSIL avec colis"
                   className="w-full h-auto max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl drop-shadow-2xl object-contain"
                   width={700}
