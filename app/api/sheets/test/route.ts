@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 import { appendSubmissionToSheet } from '@/lib/googleSheets'
 
+export const runtime = 'nodejs'
+
 export async function GET() {
   try {
     const reference = `TEST${Date.now().toString().slice(-6)}`

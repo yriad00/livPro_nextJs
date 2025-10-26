@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server'
 import { sendNotificationEmail } from '@/lib/email'
 import { appendSubmissionToSheet } from '@/lib/googleSheets'
 
+export const runtime = 'nodejs'
+
 type Country = 'maroc' | 'allemagne' | ''
 
 export interface Submission {
