@@ -28,6 +28,7 @@ interface FormData {
 export default function SendPage() {
   const router = useRouter()
   const [currentStep, setCurrentStep] = useState(1)
+  const [submitting, setSubmitting] = useState(false)
   const [formData, setFormData] = useState<FormData>({
     senderName: '', senderPhone: '', senderEmail: '', senderAddress: '', senderPostalCode: '', senderCity: '', senderCountry: '',
     receiverName: '', receiverPhone: '', receiverEmail: '', receiverAddress: '', receiverPostalCode: '', receiverCity: '', receiverCountry: ''
@@ -87,24 +88,83 @@ export default function SendPage() {
     })
 
     if (result.isConfirmed) {
-      Swal.fire({
-        title: 'Traitement en cours...',
-        text: 'Nous enregistrons votre demande d\'envoi',
-        allowOutsideClick: false,
-        didOpen: () => {
-          Swal.showLoading()
-        }
-      })
-
-      setTimeout(() => {
+      try {
+        setSubmitting(true)
         Swal.fire({
-          icon: 'success',
-          title: 'Demande enregistrée !',
+          title: 'Traitement en cours...',
+          text: 'Nous enregistrons votre demande d\'envoi',
+          allowOutsideClick: false,
+          didOpen: () => {
+            Swal.showLoading()
+          }
+        })
+
+        const res = await fetch('/api/send', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        })
+
+        const data = await res.json().catch(() => ({}))
+
+        if (!res.ok || !data?.ok) {
+          throw new Error(data?.error || 'Une erreur est survenue lors de l\'enregistrement')
+        }
+
+        const ref = data.reference || `LIV${Date.now().toString().slice(-6)}`
+        const partial = data.partial
+        const details = (() => {
+          const emailInfo = data?.resultsInfo?.email
+          const sheetInfo = data?.resultsInfo?.sheet
+          const emailRes = data?.results?.email as string | undefined
+          const sheetRes = data?.results?.sheet as string | undefined
+
+          const emailLine = emailInfo
+            ? (emailInfo.status === 'error'
+                ? `Email: échec (${emailInfo.errorMessage || 'inconnu'})`
+                : emailInfo.status === 'sent'
+                  ? 'Email: envoyé ✅'
+                  : 'Email: non configuré')
+            : (emailRes
+                ? (emailRes.startsWith('error') ? `Email: échec (${emailRes.replace('error: ','')})` : 'Email: envoyé ✅')
+                : 'Email: non configuré')
+
+          const sheetLine = sheetInfo
+            ? (sheetInfo.status === 'error'
+                ? `Google Sheets: échec (${sheetInfo.errorMessage || 'inconnu'})`
+                : sheetInfo.status === 'appended'
+                  ? 'Google Sheets: ajouté ✅'
+                  : 'Google Sheets: non configuré')
+            : (sheetRes
+                ? (sheetRes.startsWith('error') ? `Google Sheets: échec (${sheetRes.replace('error: ','')})` : 'Google Sheets: ajouté ✅')
+                : 'Google Sheets: non configuré')
+
+          const metaLines: string[] = []
+          if (sheetInfo?.status === 'error' && sheetInfo.meta) {
+            if (sheetInfo.meta.sheetName) metaLines.push(`Onglet: ${sheetInfo.meta.sheetName}`)
+            if (sheetInfo.meta.spreadsheetId) metaLines.push(`Spreadsheet ID: ${sheetInfo.meta.spreadsheetId}`)
+          }
+          if (emailInfo?.status === 'error' && emailInfo.meta) {
+            if (emailInfo.meta.host) metaLines.push(`SMTP: ${emailInfo.meta.host}:${emailInfo.meta.port}`)
+            if (emailInfo.meta.from && emailInfo.meta.to) metaLines.push(`De: ${emailInfo.meta.from} → ${emailInfo.meta.to}`)
+          }
+
+          const all = [emailLine, sheetLine, ...metaLines.map(m => `• ${m}`)]
+          return `<div class=\"text-sm text-gray-600 space-y-1\">${all.map(l=>`<div>${l}</div>`).join('')}</div>`
+        })()
+
+        Swal.fire({
+          icon: partial ? 'warning' : 'success',
+          title: partial ? 'Enregistré partiellement' : 'Demande enregistrée !',
           html: `
             <div class="space-y-3">
-              <p>Votre demande d'envoi a été enregistrée avec succès.</p>
-              <p><strong>Numéro de référence:</strong> LIV${Date.now().toString().slice(-6)}</p>
+              <p>${partial
+                ? "Votre demande a été enregistrée, mais une des opérations (email ou Google Sheets) n'a pas abouti."
+                : "Votre demande d'envoi a été enregistrée avec succès."}
+              </p>
+              <p><strong>Numéro de référence:</strong> ${ref}</p>
               <p class="text-sm text-gray-600">Nous vous contacterons sous 24h pour finaliser votre envoi.</p>
+              ${details}
             </div>
           `,
           confirmButtonColor: '#FF7A00',
@@ -113,7 +173,16 @@ export default function SendPage() {
           setCurrentStep(1)
           router.push('/')
         })
-      }, 2000)
+      } catch (err: any) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Échec de l\'envoi',
+          text: err?.message || 'Impossible de soumettre votre demande pour le moment',
+          confirmButtonColor: '#FF7A00'
+        })
+      } finally {
+        setSubmitting(false)
+      }
     }
   }
 
@@ -477,16 +546,22 @@ export default function SendPage() {
                 {currentStep < steps.length ? (
                   <button
                     onClick={nextStep}
-                    className="w-full sm:w-auto px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg font-semibold transition-all"
+                    disabled={submitting}
+                    className={`w-full sm:w-auto px-6 py-3 rounded-lg font-semibold transition-all text-white ${
+                      submitting ? 'bg-primary/50 cursor-not-allowed' : 'bg-primary hover:bg-primary/90'
+                    }`}
                   >
                     Suivant →
                   </button>
                 ) : (
                   <button
                     onClick={handleSubmit}
-                    className="w-full sm:w-auto px-8 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold transition-all"
+                    disabled={submitting}
+                    className={`w-full sm:w-auto px-8 py-3 text-white rounded-lg font-semibold transition-all ${
+                      submitting ? 'bg-green-600/50 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700'
+                    }`}
                   >
-                    Confirmer l&apos;envoi ✓
+                    {submitting ? 'Envoi en cours…' : 'Confirmer l\'envoi ✓'}
                   </button>
                 )}
               </div>
