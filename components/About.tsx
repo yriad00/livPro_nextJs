@@ -42,7 +42,7 @@ export default function About() {
             À propos de RM TAWSSIL
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
-            Votre partenaire de confiance pour l&apos;envoi de colis entre le Maroc et l&apos;Allemagne
+            Votre partenaire de confiance pour l&apos;envoi de colis entre le Maroc et l&apos;Europe
           </p>
         </motion.div>
 
@@ -73,7 +73,7 @@ export default function About() {
                     </svg>
                   ),
                   title: "Connexion internationale",
-                  description: "RM TAWSSIL est né de la volonté de faciliter les envois de colis entre le Maroc et l'Allemagne. Nous comprenons l'importance de rester connecté avec vos proches et de recevoir vos colis en toute sécurité."
+                  description: "RM TAWSSIL est né de la volonté de faciliter les envois de colis entre le Maroc et l'Europe. Nous comprenons l'importance de rester connecté avec vos proches et de recevoir vos colis en toute sécurité."
                 },
                 {
                   icon: (
@@ -91,7 +91,7 @@ export default function About() {
                     </svg>
                   ),
                   title: "Service personnalisé",
-                  description: "Avec une équipe basée au Maroc et en Allemagne, nous assurons un service personnalisé et multilingue (français, allemand, arabe) pour répondre à tous vos besoins."
+                  description: "Avec une équipe basée au Maroc et en Europe, nous assurons un service personnalisé et multilingue (français, allemand, arabe) pour répondre à tous vos besoins."
                 }
               ].map((card, index) => (
                 <motion.div

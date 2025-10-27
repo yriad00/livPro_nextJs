@@ -6,11 +6,11 @@ import { useState } from 'react'
 const faqs = [
   {
     question: 'Quels documents sont nécessaires pour la douane ?',
-    answer: 'Pour les envois internationaux entre le Maroc et l\'Allemagne, vous devez fournir une facture commerciale détaillée et une déclaration en douane. Nous vous guidons pas à pas lors de la création de votre envoi pour compléter facilement tous les documents requis.',
+    answer: 'Pour les envois internationaux entre le Maroc et l\'Europe, vous devez fournir une facture commerciale détaillée et une déclaration en douane. Nous vous guidons pas à pas lors de la création de votre envoi pour compléter facilement tous les documents requis.',
   },
   {
     question: 'Quels sont les délais de livraison ?',
-    answer: 'Les délais standards sont de 5 à 7 jours ouvrés entre Casablanca et l\'Allemagne. Des options express sont disponibles pour une livraison en 2-3 jours. Les délais peuvent varier selon les procédures douanières.',
+    answer: 'Les délais standards sont de 5 à 7 jours ouvrés entre Casablanca et l\'Europe. Des options express sont disponibles pour une livraison en 2-3 jours. Les délais peuvent varier selon les procédures douanières.',
   },
   {
     question: 'Proposez-vous une assurance pour les colis ?',

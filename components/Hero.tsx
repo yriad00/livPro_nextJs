@@ -3,9 +3,11 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useIsMobile } from '@/hooks/useIsMobile'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Hero() {
   const isMobile = useIsMobile()
+  const { t } = useLanguage()
 
   return (
     <section className="relative overflow-x-hidden overflow-y-visible text-white pt-8">
@@ -46,7 +48,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading text-white mb-6 leading-tight"
             >
-              Envoyez facilement vos colis — Maroc ↔ Allemagne
+              {t('hero.title')}
             </motion.h1>
             
             <motion.p
@@ -55,7 +57,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-lg sm:text-xl text-gray-200 mb-8 max-w-2xl mx-auto lg:mx-0"
             >
-              La meilleure solution pour vos envois internationaux. Simple, rapide et sécurisé.
+              {t('hero.subtitle')}
             </motion.p>
             
             <motion.div
@@ -69,7 +71,7 @@ export default function Hero() {
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-primary hover:bg-primary/90 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-primary/50"
                 aria-label="Créer un nouvel envoi de colis"
               >
-                Envoyez votre colis
+                {t('hero.sendButton')}
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>

@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { LanguageProvider } from '@/contexts/LanguageContext'
 
 const BRAND_NAME = 'RM TAWSSIL'
 
 export const metadata: Metadata = {
-  title: `${BRAND_NAME} — Envois Maroc ↔ Allemagne | Rapide & Sûr`,
-  description: 'Envoyez facilement vos colis entre Maroc et l\'Allemagne. Service rapide, tarifs transparents, suivi en temps réel. Testez notre MVP dès maintenant.',
-  keywords: ['envoi colis', 'Maroc Allemagne', 'livraison internationale', 'tracking colis', 'envoi sécurisé'],
+  title: `${BRAND_NAME} — Envois Maroc ↔ Europe | Rapide & Sûr`,
+  description: 'Envoyez facilement vos colis entre Maroc et l\'Europe. Service rapide, tarifs transparents, suivi en temps réel. Testez notre MVP dès maintenant.',
+  keywords: ['envoi colis', 'Maroc Europe', 'livraison internationale', 'tracking colis', 'envoi sécurisé'],
   authors: [{ name: BRAND_NAME }],
   creator: BRAND_NAME,
   publisher: BRAND_NAME,
@@ -15,8 +16,8 @@ export const metadata: Metadata = {
     locale: 'fr_FR',
     url: 'https://livpro.com',
     siteName: BRAND_NAME,
-    title: `${BRAND_NAME} — Envois Maroc ↔ Allemagne | Rapide & Sûr`,
-    description: 'Envoyez facilement vos colis entre Maroc et l\'Allemagne. Service rapide, tarifs transparents, suivi en temps réel.',
+    title: `${BRAND_NAME} — Envois Maroc ↔ Europe | Rapide & Sûr`,
+    description: 'Envoyez facilement vos colis entre Maroc et l\'Europe. Service rapide, tarifs transparents, suivi en temps réel.',
     images: [
       {
         url: '/og-image.png',
@@ -28,8 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${BRAND_NAME} — Envois Maroc ↔ Allemagne`,
-    description: 'Envoyez facilement vos colis entre Maroc et l\'Allemagne. Service rapide, tarifs transparents, suivi en temps réel.',
+    title: `${BRAND_NAME} — Envois Maroc ↔ Europe`,
+    description: 'Envoyez facilement vos colis entre Maroc et l\'Europe. Service rapide, tarifs transparents, suivi en temps réel.',
     images: ['/og-image.png'],
   },
   robots: {
@@ -67,7 +68,7 @@ export default function RootLayout({
           width: 250,
           height: 60,
         },
-        description: 'Service d\'envoi de colis entre Maroc et l\'Allemagne',
+        description: 'Service d\'envoi de colis entre Maroc et l\'Europe',
         address: {
           '@type': 'PostalAddress',
           addressLocality: 'Maroc',
@@ -89,8 +90,8 @@ export default function RootLayout({
         '@type': 'WebPage',
         '@id': 'https://livpro.com/#webpage',
         url: 'https://livpro.com',
-        name: `${BRAND_NAME} — Envois Maroc ↔ Allemagne | Rapide & Sûr`,
-        description: 'Envoyez facilement vos colis entre Maroc et l\'Allemagne. Service rapide, tarifs transparents, suivi en temps réel.',
+        name: `${BRAND_NAME} — Envois Maroc ↔ Europe | Rapide & Sûr`,
+        description: 'Envoyez facilement vos colis entre Maroc et l\'Europe. Service rapide, tarifs transparents, suivi en temps réel.',
         inLanguage: 'fr-FR',
         isPartOf: {
           '@id': 'https://livpro.com/#organization',
@@ -111,7 +112,9 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   )

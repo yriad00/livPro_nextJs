@@ -7,13 +7,13 @@ const testimonials = [
   {
     name: 'Fatima Benali',
     location: 'Maroc',
-    text: 'Service impeccable ! J\'ai envoyé des cadeaux à ma famille en Allemagne et tout est arrivé en parfait état. Le suivi en temps réel m\'a vraiment rassurée.',
+    text: 'Service impeccable ! J\'ai envoyé des cadeaux à ma famille en Europe et tout est arrivé en parfait état. Le suivi en temps réel m\'a vraiment rassurée.',
     rating: 5,
     avatar: 'FB',
   },
   {
     name: 'Mohammed El Amrani',
-    location: 'Frankfurt',
+    location: 'France',
     text: 'Enfin une solution simple et transparente pour recevoir mes colis du Maroc. Les tarifs sont clairs et le service client très réactif. Je recommande vivement !',
     rating: 5,
     avatar: 'ME',

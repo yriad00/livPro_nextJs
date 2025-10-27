@@ -3,9 +3,12 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import LanguageSwitcher from './LanguageSwitcher'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { t } = useLanguage()
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -30,25 +33,25 @@ export default function Navbar() {
               href="/" 
               className="text-gray-700 hover:text-primary font-medium transition-colors duration-200"
             >
-              Accueil
+              {t('nav.home')}
             </Link>
             <Link 
               href="/#apropos" 
               className="text-gray-700 hover:text-primary font-medium transition-colors duration-200"
             >
-              À propos
+              {t('nav.about')}
             </Link>
             <Link 
               href="/#services" 
               className="text-gray-700 hover:text-primary font-medium transition-colors duration-200"
             >
-              Services
+              {t('nav.services')}
             </Link>
             <Link 
               href="/#contact" 
               className="text-gray-700 hover:text-primary font-medium transition-colors duration-200"
             >
-              Contactez-nous
+              {t('nav.contact')}
             </Link>
           </div>
 
@@ -79,28 +82,28 @@ export default function Navbar() {
                 onClick={() => setIsMenuOpen(false)}
                 className="text-gray-700 hover:text-primary font-medium transition-colors duration-200 px-4 py-2"
               >
-                Accueil
+                {t('nav.home')}
               </Link>
               <Link 
                 href="/#apropos" 
                 onClick={() => setIsMenuOpen(false)}
                 className="text-gray-700 hover:text-primary font-medium transition-colors duration-200 px-4 py-2"
               >
-                À propos
+                {t('nav.about')}
               </Link>
               <Link 
                 href="/#services" 
                 onClick={() => setIsMenuOpen(false)}
                 className="text-gray-700 hover:text-primary font-medium transition-colors duration-200 px-4 py-2"
               >
-                Services
+                {t('nav.services')}
               </Link>
               <Link 
                 href="/#contact" 
                 onClick={() => setIsMenuOpen(false)}
                 className="text-gray-700 hover:text-primary font-medium transition-colors duration-200 px-4 py-2"
               >
-                Contactez-nous
+                {t('nav.contact')}
               </Link>
             </div>
           </div>
