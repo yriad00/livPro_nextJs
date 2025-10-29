@@ -15,14 +15,14 @@ interface FormData {
   senderAddress: string
   senderPostalCode: string
   senderCity: string
-  senderCountry: 'maroc' | 'europe' | ''
+  senderCountry: 'maroc' | 'europe' | 'uk' | ''
   receiverName: string
   receiverPhone: string
   receiverEmail: string
   receiverAddress: string
   receiverPostalCode: string
   receiverCity: string
-  receiverCountry: 'maroc' | 'europe' | ''
+  receiverCountry: 'maroc' | 'europe' | 'uk' | ''
 }
 
 export default function SendPage() {
@@ -506,7 +506,7 @@ export default function SendPage() {
                           <div>{formData.senderEmail}</div>
                           <div>{formData.senderAddress}</div>
                           <div>{formData.senderPostalCode} {formData.senderCity}</div>
-                          <div>{formData.senderCountry === 'maroc' ? '🇲🇦 Maroc' : '🇪🇺 Europe'}</div>
+                          <div>{formData.senderCountry === 'maroc' ? '🇲🇦 Maroc' : formData.senderCountry === 'uk' ? '🇬🇧 Royaume-Uni' : '🇪🇺 Europe'}</div>
                         </div>
                       </div>
 
@@ -520,7 +520,7 @@ export default function SendPage() {
                           {formData.receiverEmail && <div>{formData.receiverEmail}</div>}
                           <div>{formData.receiverAddress}</div>
                           <div>{formData.receiverPostalCode} {formData.receiverCity}</div>
-                          <div>{formData.receiverCountry === 'maroc' ? '🇲🇦 Maroc' : '🇪🇺 Europe'}</div>
+                          <div>{formData.receiverCountry === 'maroc' ? '🇲🇦 Maroc' : formData.receiverCountry === 'uk' ? '🇬🇧 Royaume-Uni' : '🇪🇺 Europe'}</div>
                         </div>
                       </div>
                     </div>
