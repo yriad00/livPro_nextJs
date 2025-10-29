@@ -363,6 +363,7 @@ export default function SendPage() {
                         <option value="">Sélectionnez un pays</option>
                         <option value="maroc">🇲🇦 Maroc</option>
                         <option value="europe">🇪🇺 Europe</option>
+                        <option value="uk">🇬🇧 Royaume-Uni</option>
                       </select>
                     </div>
                     <div className="md:col-span-2">
@@ -449,6 +450,7 @@ export default function SendPage() {
                         <option value="">Sélectionnez un pays</option>
                         <option value="maroc">🇲🇦 Maroc</option>
                         <option value="europe">🇪🇺 Europe</option>
+                           <option value="uk">🇬🇧 Royaume-Uni</option>
                       </select>
                     </div>
                     <div className="md:col-span-2">
