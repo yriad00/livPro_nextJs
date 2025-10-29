@@ -1,6 +1,6 @@
 # LivPro - Landing Page
 
-Landing page professionnelle moderne pour service d'envoi de colis Maroc ↔ Allemagne.
+Landing page professionnelle moderne pour service d'envoi de colis Maroc ↔ Europe.
 Design inspiré de onessta.com avec illustrations 3D et animations.
 
 ## 🚀 Technologies

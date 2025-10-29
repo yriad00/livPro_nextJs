@@ -56,7 +56,7 @@ export default function Features() {
             Solutions de livraison adaptées
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Une solution complète pour vos envois entre le Maroc et l&apos;Allemagne
+            Une solution complète pour vos envois entre le Maroc et l&apos;Europe
           </p>
         </motion.div>
 

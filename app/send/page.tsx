@@ -15,14 +15,14 @@ interface FormData {
   senderAddress: string
   senderPostalCode: string
   senderCity: string
-  senderCountry: 'maroc' | 'allemagne' | ''
+  senderCountry: 'maroc' | 'europe' | ''
   receiverName: string
   receiverPhone: string
   receiverEmail: string
   receiverAddress: string
   receiverPostalCode: string
   receiverCity: string
-  receiverCountry: 'maroc' | 'allemagne' | ''
+  receiverCountry: 'maroc' | 'europe' | ''
 }
 
 export default function SendPage() {
@@ -362,7 +362,7 @@ export default function SendPage() {
                       >
                         <option value="">Sélectionnez un pays</option>
                         <option value="maroc">🇲🇦 Maroc</option>
-                        <option value="allemagne">🇩🇪 Allemagne</option>
+                        <option value="europe">🇪🇺 Europe</option>
                       </select>
                     </div>
                     <div className="md:col-span-2">
@@ -448,7 +448,7 @@ export default function SendPage() {
                       >
                         <option value="">Sélectionnez un pays</option>
                         <option value="maroc">🇲🇦 Maroc</option>
-                        <option value="allemagne">🇩🇪 Allemagne</option>
+                        <option value="europe">🇪🇺 Europe</option>
                       </select>
                     </div>
                     <div className="md:col-span-2">
@@ -504,7 +504,7 @@ export default function SendPage() {
                           <div>{formData.senderEmail}</div>
                           <div>{formData.senderAddress}</div>
                           <div>{formData.senderPostalCode} {formData.senderCity}</div>
-                          <div>{formData.senderCountry === 'maroc' ? '🇲🇦 Maroc' : '🇩🇪 Allemagne'}</div>
+                          <div>{formData.senderCountry === 'maroc' ? '🇲🇦 Maroc' : '🇪🇺 Europe'}</div>
                         </div>
                       </div>
 
@@ -518,7 +518,7 @@ export default function SendPage() {
                           {formData.receiverEmail && <div>{formData.receiverEmail}</div>}
                           <div>{formData.receiverAddress}</div>
                           <div>{formData.receiverPostalCode} {formData.receiverCity}</div>
-                          <div>{formData.receiverCountry === 'maroc' ? '🇲🇦 Maroc' : '🇩🇪 Allemagne'}</div>
+                          <div>{formData.receiverCountry === 'maroc' ? '🇲🇦 Maroc' : '🇪🇺 Europe'}</div>
                         </div>
                       </div>
                     </div>

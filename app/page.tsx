@@ -5,6 +5,7 @@ import Hero from '@/components/Hero'
 import Stats from '@/components/Stats'
 import Features from '@/components/Features'
 import HowItWorks from '@/components/HowItWorks'
+import DeliveryPoints from '@/components/DeliveryPoints'
 import CTABanner from '@/components/CTABanner'
 import About from '@/components/About'
 import Testimonials from '@/components/Testimonials'
@@ -25,6 +26,7 @@ export default function Home() {
         <Stats />
         <Features />
         <HowItWorks />
+        <DeliveryPoints />
         <CTABanner />
         <About />
         <Testimonials />
